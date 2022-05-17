@@ -2,6 +2,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './Component/About/About';
+import Addservice from './Component/Addservice/Addservice';
 import Auth$authtication from './Component/Authoriazation&authentication/Auth$authtication';
 import Checkout from './Component/Checkout/Checkout';
 import Login from './Component/Contract/Login';
@@ -34,6 +35,12 @@ function App() {
         </RequireAuth>}>
 
         </Route>
+        <Route path="/addservice" element={
+        <RequireAuth>F
+          <Addservice></Addservice>
+        </RequireAuth>}>
+        </Route>
+          
         <Route path='/register' element={<Resgister></Resgister>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
          </Routes>

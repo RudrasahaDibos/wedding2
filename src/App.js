@@ -11,6 +11,7 @@ import RequireAuth from './Component/Contract/RequireAuth/RequireAuth';
 import Firebase1 from './Component/Firebase1/Firebase1';
 import Firebase2 from './Component/Firebase2/Firebase2';
 import Home from './Component/Home/Home/Home';
+import Manageservices from './Component/Manageservices/Manageservices';
 import ServiceDetails from './Component/ServiceDetails/ServiceDetails';
 import Header from './Component/Shared/Header/Header';
 import NotFound from './Component/Shared/NotFound/NotFound';
@@ -33,11 +34,17 @@ function App() {
         <RequireAuth>
           <Checkout></Checkout>
         </RequireAuth>}>
-
         </Route>
+
         <Route path="/addservice" element={
         <RequireAuth>F
           <Addservice></Addservice>
+        </RequireAuth>}>
+        </Route>
+
+        <Route path="/manage" element={
+        <RequireAuth>
+          <Manageservices></Manageservices>
         </RequireAuth>}>
         </Route>
           

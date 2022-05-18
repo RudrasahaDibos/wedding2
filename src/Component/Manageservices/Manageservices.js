@@ -2,11 +2,21 @@ import React from 'react';
 import Hooks from '../../Hooks/Hooks';
 
 const Manageservices = () => {
-    const [services]= Hooks();
+    const [services,setservices]= Hooks();
     const handleDelete = id =>{
        const proceed =  window.confirm('Are you sure?')
        if(proceed){
-           console.log('halde')
+           const url =`http://localhost:5000/service/${id}`;
+           fetch(url,{
+
+              method:'DELETE'
+           })
+           .then(res => res.json())
+           .then(data =>{
+               console.log(data);
+               const remaining = services.filter(service =>service._id !==id)
+             setservices(remaining);
+           })
        }
     }
 

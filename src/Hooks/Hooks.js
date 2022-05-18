@@ -9,6 +9,6 @@ import { useEffect, useState } from "react";
      .then(data=>setservices(data))
 
     },[])
-    return [services]
+    return [services ,setservices]
  }
  export default Hooks;
